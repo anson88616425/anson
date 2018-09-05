@@ -1,0 +1,50 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.M2'
+    }
+    repositories {
+        mavenLocal()
+        maven { url "file://D:/Program Files/maven/repository" }
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.developer'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenLocal()
+    maven { url "file://D:/Program Files/maven/repository" }
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+ext {
+    shiroVersion = '1.2.3'
+}
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-amqp')
+    compile("org.apache.shiro:shiro-core:${shiroVersion}")
+    compile("org.apache.shiro:shiro-spring:${shiroVersion}")
+    compile("org.apache.shiro:shiro-web:${shiroVersion}")
+    compile("com.github.ben-manes.caffeine:caffeine")
+    compile("org.springframework.boot:spring-boot-starter-cache")
+    compile("org.apache.tomcat.embed:tomcat-embed-jasper")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
+
+
