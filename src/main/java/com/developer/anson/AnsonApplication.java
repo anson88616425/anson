@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class AnsonApplication {
 
     public static void main(String[] args) {
+    	System.Out.println("111");
         SpringApplication.run(AnsonApplication.class, args);
     }
 }
